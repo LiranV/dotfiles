@@ -36,13 +36,6 @@ set smartindent
 set foldmethod=syntax   "fold based on syntax
 set nofoldenable        "dont fold by default
 
-" Set tabs as 4 spaces
-"set tabstop=4
-"set shiftwidth=4
-"set softtabstop=4
-"set shiftround
-"set expandtab
-
 " Show matching [] and {}
 set showmatch
 
@@ -84,6 +77,9 @@ vnoremap <Space> za
 
 " Display incomplete commands
 set showcmd
+
+" Force saving files that require root permission
+cmap w!! %!sudo tee > /dev/null %
 
 " vundle
 Bundle 'gmarik/vundle'
