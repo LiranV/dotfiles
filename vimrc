@@ -83,3 +83,4 @@ cmap w!! %!sudo tee > /dev/null %
 
 " vundle
 Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
