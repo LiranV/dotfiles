@@ -67,10 +67,6 @@ autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 "***********************************************************
 
-
-" Enable C.Vim Plugin
-filetype plugin on
-
 " Space to toggle folds
 nnoremap <Space> za
 vnoremap <Space> za
