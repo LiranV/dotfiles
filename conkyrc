@@ -18,7 +18,7 @@ default_color efefef
 default_shade_color black
 default_outline_color black
 alignment bottom_right
-gap_x 180
+gap_x 0
 gap_y 0
 no_buffers yes
 uppercase no
