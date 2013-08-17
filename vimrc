@@ -60,25 +60,25 @@ command! Q q
 noremap <C-Y> 5<C-Y>
 noremap <C-E> 5<C-E>
 
-set autoindent						" Set automatic indentation
+set autoindent                      " Set automatic indentation
 set shiftround
-set autoread						" Refresh buffer if file has been changed externally
+set autoread                        " Refresh buffer if file has been changed externally
 set backspace=indent,eol,start
-set cursorline						" Highlight cursor line
+set cursorline                      " Highlight cursor line
 set encoding=utf8
 set expandtab                       " Use spaces instead of tabs
 set hidden
-set hlsearch						" Highlight search keyword
+set hlsearch                        " Highlight search keyword
 set ignorecase                      " Make search case-insensitive
-set incsearch						" Search as you type
+set incsearch                       " Search as you type
 set laststatus=2
 set mouse=a
 set number                          " Show line numbers
 set ruler                           " Current cursor position in lower right corner
-set scrolloff=5						" Keep at least 5 lines below the cursor
+set scrolloff=5                     " Keep at least 5 lines below the cursor
 set shiftwidth=4
-set showcmd							" Show incomplete commands
-set showmatch						" Show matching [] and {}
+set showcmd                         " Show incomplete commands
+set showmatch                       " Show matching [] and {}
 set smartcase
 set smarttab
 set softtabstop=4
