@@ -1,16 +1,37 @@
-" Liran's VIM configuration file
+" Liran's Vim configuration file
+set nocompatible
+colorscheme zenburn
+filetype plugin indent on
+syntax enable                       " Syntax highlighting
+
+" --------------------------------------------------
+" ----------------- Vundle config ------------------
+" --------------------------------------------------
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+Bundle 'gmarik/vundle'
 
-" VIM 256 colors
-set t_Co=256
+" File explorer within Vim
+Bundle 'scrooloose/nerdtree'
+" --------------------------------------------------
 
-" Set theme
-colorscheme zenburn
+" Stay in visual mode while shifting indent
+vnoremap < <gv 
+vnoremap > >gv 
+"vnoremap <Space> I<Space><Esc>gv
 
-" Easier moving of code blocks
-vnoremap < <gv " Better indentation
-vnoremap > >gv " Better indentation
+" Easy split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Force saving files that require root permission
+cmap w!! %!sudo tee > /dev/null %
+
+" Undo and redo in insert mode
+inoremap <C-u> <C-o>u
+inoremap <C-y> <C-o><C-R>
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
@@ -19,64 +40,48 @@ autocmd! bufwritepost .vimrc source %
 set pastetoggle=<F2>
 set clipboard=unnamed
 
-" Current cursor position in lower right corner
-set ruler
-
-" Show line numbers
-set number
-
-" Syntax highlighting
-syntax on
-
-" Set automatic indentation
-set autoindent
-set smartindent
-
 " Code folding
-set foldmethod=syntax   "fold based on syntax
-set nofoldenable        "dont fold by default
-
-" Show matching [] and {}
-set showmatch
-
-" Set title of window to file name
-set title
-
-" Prevent vim from emulating vi
-set nocompatible
+set foldmethod=syntax               " Fold based on syntax
+set nofoldenable                    " Don't fold by default
+nnoremap <Space> za                 " Space to toggle folds
+vnoremap <Space> za
 
 " History settings
 set history=700
 set undolevels=700
 
-" Relative line numbering
-" absolute when in insert mode / relative when in normal mode
-function! NumberToggle()
-  if(&relativenumber == 1)
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+" For :W errors
+command! W w
+command! Wq wq
+command! WQ wq
+command! Q q
 
-:au FocusLost * :set number
-:au FocusGained * :set relativenumber
+" Better scrolling
+noremap <C-Y> 5<C-Y>
+noremap <C-E> 5<C-E>
 
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
-"***********************************************************
-
-" Space to toggle folds
-nnoremap <Space> za
-vnoremap <Space> za
-
-" Display incomplete commands
-set showcmd
-
-" Force saving files that require root permission
-cmap w!! %!sudo tee > /dev/null %
-
-" vundle
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
+set autoindent						" Set automatic indentation
+set shiftround
+set autoread						" Refresh buffer if file has been changed externally
+set backspace=indent,eol,start
+set cursorline						" Highlight cursor line
+set encoding=utf8
+set expandtab                       " Use spaces instead of tabs
+set hidden
+set hlsearch						" Highlight search keyword
+set ignorecase                      " Make search case-insensitive
+set incsearch						" Search as you type
+set laststatus=2
+set mouse=a
+set number                          " Show line numbers
+set ruler                           " Current cursor position in lower right corner
+set scrolloff=5						" Keep at least 5 lines below the cursor
+set shiftwidth=4
+set showcmd							" Show incomplete commands
+set showmatch						" Show matching [] and {}
+set smartcase
+set smarttab
+set softtabstop=4
+set t_Co=256                        " Enable 256-color mode
+set tabstop=4
+set wildmenu
