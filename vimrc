@@ -84,4 +84,5 @@ set smarttab
 set softtabstop=4
 set t_Co=256                        " Enable 256-color mode
 set tabstop=4
+set noswapfile
 set wildmenu
