@@ -60,6 +60,10 @@ command! Q q
 noremap <C-Y> 5<C-Y>
 noremap <C-E> 5<C-E>
 
+" RTL support
+noremap <F9> :set invrl<CR>
+noremap <F8> :set invrevins<CR>
+
 set autoindent                      " Set automatic indentation
 set shiftround
 set autoread                        " Refresh buffer if file has been changed externally
@@ -86,3 +90,6 @@ set t_Co=256                        " Enable 256-color mode
 set tabstop=4
 set noswapfile
 set wildmenu
+set colorcolumn=80
+set nowrap
+hi ColorColumn ctermbg=darkgrey
