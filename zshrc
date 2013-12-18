@@ -57,4 +57,6 @@ alias pacupd='sudo pacman -Sy && sudo abs'     # Update and refresh the local pa
 alias pacinsd='sudo pacman -S --asdeps'        # Install given package(s) as dependencies of another package
 alias pacmir='sudo pacman -Syy'                # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
+alias sshhuji='ssh lirux%river@gw.cs.huji.ac.il'
+alias sshhujix11='ssh -X -C -Y lirux%river@gw.cs.huji.ac.il'
 export EDITOR="vim"
