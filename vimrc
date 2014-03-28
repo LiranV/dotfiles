@@ -13,6 +13,8 @@ Bundle 'gmarik/vundle'
 
 " File explorer within Vim
 Bundle 'scrooloose/nerdtree'
+
+Bundle 'ervandew/supertab'
 " --------------------------------------------------
 
 " Stay in visual mode while shifting indent
