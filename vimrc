@@ -15,6 +15,11 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 
 Bundle 'ervandew/supertab'
+
+" Colorschemes
+Bundle 'jnurmine/Zenburn'
+Bundle 'sickill/vim-monokai'
+
 " --------------------------------------------------
 
 " Stay in visual mode while shifting indent

@@ -5,7 +5,9 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="minimal"
+#ZSH_THEME="minimal"
+ZSH_THEME="agnoster"
+DEFAULT_USER="liran" # Hide the username
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -60,3 +62,4 @@ alias pacmir='sudo pacman -Syy'                # Force refresh of all package li
 alias sshhuji='ssh lirux%river@gw.cs.huji.ac.il'
 alias sshhujix11='ssh -X -C -Y lirux%river@gw.cs.huji.ac.il'
 export EDITOR="vim"
+export TERM=xterm-256color
