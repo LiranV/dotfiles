@@ -149,6 +149,9 @@ exec --no-startup-id sh ~/.fehbg
 # Start Network Manager Applet
 exec --no-startup-id nm-applet
 
+# Set keyboard layout switching
+exec setxkbmap -layout "us, il" -option "grp:lalt_lshift_toggle"
+
 # Volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
