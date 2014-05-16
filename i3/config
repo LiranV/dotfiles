@@ -15,8 +15,8 @@ new_float pixel 1
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec urxvtc
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -145,6 +145,9 @@ bar {
 
 # Set wallpaper
 exec --no-startup-id sh ~/.fehbg
+
+# Start Network Manager Applet
+exec --no-startup-id nm-applet
 
 # Volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
