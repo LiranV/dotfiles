@@ -61,5 +61,6 @@ alias pacmir='sudo pacman -Syy'                # Force refresh of all package li
 
 alias sshhuji='ssh lirux%river@gw.cs.huji.ac.il'
 alias sshhujix11='ssh -X -C -Y lirux%river@gw.cs.huji.ac.il'
+alias junit='java -cp /usr/share/java/junit4.jar:./ org.junit.runner.JUnitCore'
 export EDITOR="vim"
 export TERM=xterm-256color
