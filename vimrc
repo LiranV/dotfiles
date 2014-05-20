@@ -9,16 +9,18 @@ syntax enable                       " Syntax highlighting
 " --------------------------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " File explorer within Vim
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
 " Colorschemes
-Bundle 'jnurmine/Zenburn'
-Bundle 'sickill/vim-monokai'
+Plugin 'jnurmine/Zenburn'
+Plugin 'sickill/vim-monokai'
+
+call vundle#end()
 
 " --------------------------------------------------
 
