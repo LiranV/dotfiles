@@ -16,6 +16,8 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'ervandew/supertab'
 
+Plugin 'kien/ctrlp.vim'
+
 " Colorschemes
 Plugin 'jnurmine/Zenburn'
 Plugin 'sickill/vim-monokai'
