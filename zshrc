@@ -39,7 +39,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/bin/vendor_perl:/usr/bin/core_perl
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/bin/vendor_perl:/usr/bin/core_perl
 stty stop undef
 stty start undef
 alsi -a
@@ -64,4 +64,4 @@ alias sshhuji='ssh lirux%river@gw.cs.huji.ac.il'
 alias sshhujix11='ssh -X -C -Y lirux%river@gw.cs.huji.ac.il'
 alias junit='java -cp /usr/share/java/junit4.jar:./ org.junit.runner.JUnitCore'
 export EDITOR="vim"
-export TERM=xterm-256color
+export TERM=screen-256color
