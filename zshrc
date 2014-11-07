@@ -64,4 +64,4 @@ alias sshhuji='ssh lirux%river@gw.cs.huji.ac.il'
 alias sshhujix11='ssh -X -C -Y lirux%river@gw.cs.huji.ac.il'
 alias junit='java -cp /usr/share/java/junit4.jar:./ org.junit.runner.JUnitCore'
 export EDITOR="vim"
-export TERM=screen-256color
+export TERM=rxvt-unicode-256color
