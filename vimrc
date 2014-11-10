@@ -2,7 +2,7 @@
 set nocompatible
 colorscheme zenburn
 filetype plugin indent on
-syntax enable                       " Syntax highlighting
+syntax enable						" Syntax highlighting
 
 " --------------------------------------------------
 " ----------------- Vundle config ------------------
@@ -52,9 +52,9 @@ set pastetoggle=<F2>
 set clipboard=unnamed
 
 " Code folding
-set foldmethod=syntax               " Fold based on syntax
-set nofoldenable                    " Don't fold by default
-nnoremap <Space> za                 " Space to toggle folds
+set foldmethod=syntax				" Fold based on syntax
+set nofoldenable					" Don't fold by default
+nnoremap <Space> za					" Space to toggle folds
 vnoremap <Space> za
 
 " History settings
@@ -75,29 +75,29 @@ noremap <C-E> 5<C-E>
 noremap <F9> :set invrl<CR>
 noremap <F8> :set invrevins<CR>
 
-set autoindent                      " Set automatic indentation
+set autoindent						" Set automatic indentation
 set shiftround
-set autoread                        " Refresh buffer if file has been changed externally
+set autoread						" Refresh buffer if file has been changed externally
 set backspace=indent,eol,start
-set cursorline                      " Highlight cursor line
+set cursorline						" Highlight cursor line
 set encoding=utf8
-set expandtab                       " Use spaces instead of tabs
+set noexpandtab						  " Use tabs
 set hidden
-set hlsearch                        " Highlight search keyword
-set ignorecase                      " Make search case-insensitive
-set incsearch                       " Search as you type
+set hlsearch						" Highlight search keyword
+set ignorecase						" Make search case-insensitive
+set incsearch						" Search as you type
 set laststatus=2
 set mouse=a
-set number                          " Show line numbers
-set ruler                           " Current cursor position in lower right corner
-set scrolloff=5                     " Keep at least 5 lines below the cursor
+set number							" Show line numbers
+set ruler							" Current cursor position in lower right corner
+set scrolloff=5						" Keep at least 5 lines below the cursor
 set shiftwidth=4
-set showcmd                         " Show incomplete commands
-set showmatch                       " Show matching [] and {}
+set showcmd							" Show incomplete commands
+set showmatch						" Show matching [] and {}
 set smartcase
 set smarttab
 set softtabstop=4
-set t_Co=256                        " Enable 256-color mode
+set t_Co=256						" Enable 256-color mode
 set tabstop=4
 set noswapfile
 set wildmenu
