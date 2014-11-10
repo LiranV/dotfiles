@@ -81,7 +81,7 @@ set autoread						" Refresh buffer if file has been changed externally
 set backspace=indent,eol,start
 set cursorline						" Highlight cursor line
 set encoding=utf8
-set noexpandtab						  " Use tabs
+set noexpandtab						" Use tabs
 set hidden
 set hlsearch						" Highlight search keyword
 set ignorecase						" Make search case-insensitive
