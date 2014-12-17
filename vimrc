@@ -22,6 +22,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'jnurmine/Zenburn'
 Plugin 'sickill/vim-monokai'
 
+" vim-javascript
+Plugin 'pangloss/vim-javascript'
+
 call vundle#end()
 
 " --------------------------------------------------
@@ -101,6 +104,7 @@ set t_Co=256						" Enable 256-color mode
 set tabstop=4
 set noswapfile
 set wildmenu
-set colorcolumn=80
+set colorcolumn=100
 set nowrap
+set t_ut=							" Disable Background Color Erase for working with tmux
 hi ColorColumn ctermbg=darkgrey
