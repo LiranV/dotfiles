@@ -1,22 +1,31 @@
 " Liran's Vim configuration file
 set nocompatible
 colorscheme zenburn
-filetype plugin indent on
 syntax enable						" Syntax highlighting
 
 " --------------------------------------------------
 " ----------------- Vundle config ------------------
 " --------------------------------------------------
+filetype off
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'gmarik/Vundle.vim'
 
 " File explorer within Vim
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 
 Plugin 'kien/ctrlp.vim'
+
+Plugin 'scrooloose/syntastic'
+
+Plugin 'Valloric/YouCompleteMe'
+
+" Git support
+Plugin 'tpope/vim-fugitive'
 
 " Colorschemes
 Plugin 'jnurmine/Zenburn'
@@ -25,6 +34,10 @@ Plugin 'sickill/vim-monokai'
 call vundle#end()
 
 " --------------------------------------------------
+
+filetype plugin indent on
+
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " Stay in visual mode while shifting indent
 vnoremap < <gv 
