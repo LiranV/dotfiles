@@ -53,6 +53,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Fix keycodes for HOME and END
+map OH <Home>
+map OF <End>
+imap OH <Home>
+imap OF <End>
+
 " Force saving files that require root permission
 cmap w!! %!sudo tee > /dev/null %
 
@@ -121,3 +127,4 @@ set colorcolumn=100
 set nowrap
 set t_ut=							" Disable Background Color Erase for working with tmux
 hi ColorColumn ctermbg=darkgrey
+
