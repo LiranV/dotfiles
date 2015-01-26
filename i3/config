@@ -15,8 +15,8 @@ new_float pixel 1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+Return exec urxvtc
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvtc
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -24,6 +24,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+space exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-10' -l 20"
 
 # change focus
 bindsym $mod+h focus left
@@ -50,10 +51,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-#bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
-#bindsym $mod+v split v
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -75,29 +76,40 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# set workspace variables
+set $WS1 1:  web
+set $WS2 2:  code
+set $WS3 3:  steam
+set $WS9 9:  games
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+9 workspace $WS9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+9 move container to workspace $WS9
 bindsym $mod+Shift+0 move container to workspace 10
+
+# cycle through workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -137,14 +149,22 @@ bindsym $mod+r mode "resize"
 bar {
         position top
         status_command i3status
+		font pango:Source Code Pro SemiBold 9
         colors{
-            background #232323
-            statusline #DCDCDC
+            background #212121
+            statusline #33AAFF
+			focused_workspace #3A3A3A #1793D1
+			active_workspace #3A3A3A #1793D1
+			urgent_workspace #FFFFFF #1793D1
         }
 }
 
+
+# startup applications
+
 # Set wallpaper
-exec --no-startup-id sh ~/.fehbg
+#exec --no-startup-id sh ~/.fehbg
+exec --no-startup-id nitrogen --restore
 
 # Start Network Manager Applet
 exec --no-startup-id nm-applet
@@ -152,10 +172,22 @@ exec --no-startup-id nm-applet
 # Set keyboard layout switching
 exec setxkbmap -layout "us, il" -option "grp:lalt_lshift_toggle"
 
+exec --no-startup-id volumeicon
+exec --no-startup-id CopyAgent
+exec --no-startup-id dropboxd
+
+
+# Assign programs to specific workspaces
+assign [class="Steam"] 3:  steam
+assign [class="dota_linux"] 9:  games
+
 # Volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# calculator shortcut
+bindsym XF86Calculator exec gnome-calculator
 
 #EXAMPLE USING THE i3 bar
 # Create Log out, Reboot, Poweroff bindings
