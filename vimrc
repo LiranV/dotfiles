@@ -43,6 +43,9 @@ call vundle#end()
 filetype plugin indent on
 
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_confirm_extra_conf = 0
+
+let g:load_doxygen_syntax=1
 
 
 " Stay in visual mode while shifting indent
