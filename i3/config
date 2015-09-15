@@ -200,7 +200,18 @@ assign [class="Xchat"] $WS8
 assign [class="dota_linux"] $WS9
 assign [class="dota2"] $WS9
 assign [class="csgo_linux"] $WS9
+assign [class="Skype"] $WS7
 assign [class="hl2_linux"] $WS9
+assign [class="Borderlands2"] $WS9
+assign [class="csgo_linux"] $WS9
+
+# float by default
+for_window [class="Skype"] floating enable
+for_window [class="Telegram"] floating enable
+for_window [window_role="Msgcompose"] floating enable
+for_window [title="Friends" class="Steam"] floating enable
+for_window [title="^Steam - Update News.*" class="Steam"] floating enable
+for_window [title=".* - Chat$" class="Steam"] floating enable
 
 ##### bind application shortcuts #####
 
