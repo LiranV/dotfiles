@@ -64,5 +64,11 @@ alias sshhuji='ssh lirux%river@gw.cs.huji.ac.il'
 alias sshhujix11='ssh -X -C -Y lirux%river@gw.cs.huji.ac.il'
 alias junit='java -cp /usr/share/java/junit4.jar:./ org.junit.runner.JUnitCore'
 alias addon-sdk="cd /opt/addon-sdk && source bin/activate; cd -"
+alias cpufreq='watch grep \"cpu MHz\" /proc/cpuinfo'
+alias rm='rm -i'
+alias cpp='g++ -std=c++11 -Wextra -Wall'
 export EDITOR="vim"
-export TERM=rxvt-unicode-256color
+#export TERM=rxvt-unicode-256color
+export TERM=xterm-termite
+#export VDPAU_DRIVER=va_gl
+eval $(dircolors ~/.dircolors)			# color ls support for termite

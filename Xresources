@@ -1,10 +1,11 @@
 !URxvt.font: heb8x13
-URxvt.font: xft:Source Code Pro for Powerline:style=Semibold:size=10,xft:FontAwesome:pixelsize=10,xft:Dejavu Sans Mono:pixelsize=10
-URxvt.boldfont: xft:Source Code Pro for Powerline:style=Bold:size=10
+URxvt.font: xft:Source Code Pro for Powerline:style=Semibold:size=11,xft:FontAwesome:style=Regular:pixelsize=11:width=20,xft:DejaVu Sans:style=Book:pixelsize=11
+URxvt.boldfont: xft:Source Code Pro for Powerline:style=Bold:size=11
 
-URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common: default,clipboard,matcher
+URxvt.iso14755: False
 URxvt.termName: rxvt-unicode-256color
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/firefox-developer
 URxvt.matcher.button: 1
 !Xft.dpi:    94
 Xft.dpi:    94
@@ -13,6 +14,17 @@ Xft.rgba:   rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 URxvt*.transparent: true
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens

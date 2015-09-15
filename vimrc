@@ -44,6 +44,12 @@ filetype plugin indent on
 
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
+" syntastic config
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+
+" enable doxygen syntax highlighting
+let g:load_doxygen_syntax=1
 
 " Stay in visual mode while shifting indent
 vnoremap < <gv 

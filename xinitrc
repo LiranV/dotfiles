@@ -21,3 +21,4 @@ setxkbmap -layout "us, il" -option "grp:lalt_lshift_toggle"
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
+exec i3
