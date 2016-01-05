@@ -101,8 +101,8 @@ vnoremap <Space> za
 
 
 " History settings
-set history=700
-set undolevels=700
+set history=1000
+set undolevels=1000
 
 
 " For :W errors
