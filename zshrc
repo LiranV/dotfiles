@@ -40,8 +40,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/bin/vendor_perl:/usr/bin/core_perl
-stty stop undef
-stty start undef
 alsi -a
 
 # Pacman alias
@@ -64,5 +62,8 @@ alias sshhuji='ssh lirux%river@gw.cs.huji.ac.il'
 alias sshhujix11='ssh -X -C -Y lirux%river@gw.cs.huji.ac.il'
 alias junit='java -cp /usr/share/java/junit4.jar:./ org.junit.runner.JUnitCore'
 alias addon-sdk="cd /opt/addon-sdk && source bin/activate; cd -"
+alias vi='vim' # Shadow vi
 export EDITOR="vim"
-export TERM=rxvt-unicode-256color
+export TERM=xterm-termite
+export SDL_GAMECONTROLLERCONFIG="030000005e040000dd02000003020000,Microsoft X-Box One pad (Firmware 2015),platform:Linux,x:b2,a:b0,b:b1,y:b3,back:b6,guide:b8,start:b7,dpleft:h0.8,dpdown:h0.0,dpdown:h0.4,dpright:h0.0,dpright:h0.2,dpup:h0.0,dpup:h0.1,leftshoulder:h0.0,leftshoulder:b4,lefttrigger:a2,rightshoulder:b5,righttrigger:a5,leftstick:b9,rightstick:b10,leftx:a0,lefty:a1,rightx:a3,righty:a4,"
+eval $(dircolors ~/.dircolors) # Termite directory color support
