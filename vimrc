@@ -101,8 +101,8 @@ vnoremap <Space> za
 
 
 " History settings
-set history=700
-set undolevels=700
+set history=1000
+set undolevels=1000
 
 
 " For :W errors
@@ -125,6 +125,11 @@ noremap <F8> :set invrevins<CR>
 " This lets escape clear the search highlights
 map <F4> :noh<CR>:<backspace>
 
+" Store all swap files here
+set backupdir=~/.vim/tmp
+set directory=~/.vim/tmp
+set undodir=~/.vim/tmp
+set viewdir=~/.vim/tmp
 
 " tabs
 set noexpandtab						" Use tabs
@@ -157,7 +162,6 @@ set showcmd							" Show incomplete commands
 set showmatch						" Show matching [] and {}
 set smartcase
 set t_Co=256						" Enable 256-color mode
-set noswapfile
 set wildmenu
 set colorcolumn=100
 set nowrap

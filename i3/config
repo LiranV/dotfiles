@@ -1,7 +1,4 @@
-##########################
-# Liran's i3 config file #
-##########################
-
+# Mod key
 set $mod Mod4
 
 # Font
@@ -18,73 +15,58 @@ new_float pixel 2
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
+# Start a terminal
 bindsym $mod+Return exec termite
 
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# Start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans-11' -l 20"
 
-# change focus
+# Change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
+# Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
+# Split in horizontal orientation
 bindsym $mod+b split h
 
-# split in vertical orientation
+# Split in vertical orientation
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+# Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
+# Focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
+# Focus the child container
 #bindsym $mod+d focus child
 
-# set workspace variables
+# Set workspace variables
 set $WS1 1:  web
-set $WS2 2:  code
+set $WS2 2: term
 set $WS3 3:  steam
-set $WS4 4
+set $WS4 4:  code
 set $WS5 5:  music
 set $WS6 6
 set $WS7 7
@@ -92,7 +74,7 @@ set $WS8 8: irc
 set $WS9 9:  games
 set $WS0 0
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace $WS1
 bindsym $mod+2 workspace $WS2
 bindsym $mod+3 workspace $WS3
@@ -104,7 +86,7 @@ bindsym $mod+8 workspace $WS8
 bindsym $mod+9 workspace $WS9
 bindsym $mod+0 workspace $WS0
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $WS1
 bindsym $mod+Shift+2 move container to workspace $WS2
 bindsym $mod+Shift+3 move container to workspace $WS3
@@ -116,19 +98,18 @@ bindsym $mod+Shift+8 move container to workspace $WS8
 bindsym $mod+Shift+9 move container to workspace $WS9
 bindsym $mod+Shift+0 move container to workspace $WS0
 
-# cycle through workspaces
+# Cycle through workspaces
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+# Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -141,12 +122,6 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -158,87 +133,18 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
-        status_command i3status
-		font pango:Source Code Pro SemiBold, FontAwesome 10
+        status_command i3blocks
+		font pango:Source Code Pro SemiBold 10
         colors{
-            background #212121
-            statusline #33AAFF
-			focused_workspace #3A3A3A #1793D1
-			active_workspace #3A3A3A #1793D1
-			urgent_workspace #FFFFFF #1793D1
+            background #2F343F
+            statusline #1793D1
+			#					border	background	text
+			focused_workspace	#2F343F	#2F343F		#1793D1
+			active_workspace	#2F343F	#2F343F		#1793D1
+			inactive_workspace	#2F343F	#2F343F		#919191
+			urgent_workspace	#2F343F #1793D1		#3A3A3A
         }
 }
-
-
-##### startup applications #####
-#
-exec --no-startup-id compton -b --backend glx --vsync opengl-swc
-#exec --no-startup-id compton -b --backend glx
-
-# Set wallpaper
-#exec --no-startup-id sh ~/.fehbg
-exec --no-startup-id nitrogen --restore
-
-# Start Network Manager Applet
-exec --no-startup-id nm-applet
-
-# Set keyboard layout switching
-exec --no-startup-id setxkbmap -layout "us, il" -option "grp:lalt_lshift_toggle"
-
-exec --no-startup-id volumeicon
-exec --no-startup-id CopyAgent
-exec --no-startup-id dropboxd
-
-################################
-
-
-# Assign programs to specific workspaces
-assign [class="Steam"] $WS3
-assign [class="Clementine"] $WS5
-assign [class="Spotify"] $WS5
-assign [class="Xchat"] $WS8
-assign [class="dota_linux"] $WS9
-assign [class="dota2"] $WS9
-assign [class="csgo_linux"] $WS9
-assign [class="Skype"] $WS7
-assign [class="hl2_linux"] $WS9
-assign [class="Borderlands2"] $WS9
-assign [class="csgo_linux"] $WS9
-
-# float by default
-for_window [class="Skype"] floating enable
-for_window [class="Telegram"] floating enable
-for_window [window_role="Msgcompose"] floating enable
-for_window [title="Friends" class="Steam"] floating enable
-for_window [title="^Steam - Update News.*" class="Steam"] floating enable
-for_window [title=".* - Chat$" class="Steam"] floating enable
-
-##### bind application shortcuts #####
-
-# Volume control
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
-
-# backlight control
-bindcode 233 exec xbacklight +10
-bindcode 232 exec xbacklight -10
-
-# calculator shortcut
-bindsym XF86Calculator exec gnome-calculator
-
-# take screenshot
-bindsym Print exec xfce4-screenshooter
-
-# open music player
-bindsym Mod1+Control+m exec clementine & i3 workspace $WS5
-
-# lockscreen
-bindsym Mod1+Control+l exec "~/bin/lockscreen.sh"
-#bindsym Mod1+Control+l exec "i3lock -i ~/Pictures/wallpaper-942629.png"
-exec xautolock -time 15 -locker '~/bin/lockscreen.sh' &
-
-######################################
 
 # Create Log out, Reboot, Poweroff bindings
 mode "Exit >> (L)ogout, (X)eboot, (P)oweroff  (C)Reload (R)Restart" {
@@ -254,3 +160,67 @@ mode "Exit >> (L)ogout, (X)eboot, (P)oweroff  (C)Reload (R)Restart" {
 }
  
 bindsym Mod4+Control+q mode "Exit >> (L)ogout, (X)eboot, (P)oweroff  (C)Reload (R)Restart"
+
+# Set keyboard layout switching
+#exec setxkbmap -layout "us, il" -option "grp:lalt_lshift_toggle"
+
+##### Assign programs to specific workspaces #####
+assign [class="Steam"] $WS3
+assign [class="Clementine"] $WS5
+assign [class="Spotify"] $WS5
+assign [class="Xchat"] $WS8
+# Games
+assign [class="dota_linux"] $WS9
+assign [class="dota2"] $WS9
+assign [class="csgo_linux"] $WS9
+assign [class="Skype"] $WS7
+assign [class="hl2_linux"] $WS9
+assign [class="Borderlands2"] $WS9
+assign [class="csgo_linux"] $WS9
+assign [class="ShadowWarrior.bin.x86"] $WS9
+assign [title="Talos - Linux"] $WS9
+
+##### Float by default #####
+for_window [class="VirtualBox"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Skype"] floating enable
+for_window [class="Telegram"] floating enable
+for_window [window_role="Msgcompose"] floating enable
+for_window [title="Friends" class="Steam"] floating enable
+for_window [title="^Steam - Update News.*" class="Steam"] floating enable
+for_window [title=".* - Chat$" class="Steam"] floating enable
+
+##### Volume control #####
+# alsa
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+# pulseaudio
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% # decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+##### Backlight control #####
+bindcode 233 exec xbacklight +10
+bindcode 232 exec xbacklight -10
+
+##### Application shortcuts #####
+
+# calculator shortcut
+bindsym XF86Calculator exec gnome-calculator
+bindsym Print exec xfce4-screenshooter
+bindsym Mod1+Control+m exec clementine & i3 workspace $WS5 # open music player and move to workspace
+bindsym Mod1+Control+f exec nemo --no-desktop
+
+# lockscreen
+bindsym Mod1+Control+l exec "~/bin/lockscreen.sh"
+exec xautolock -time 15 -locker '~/bin/lockscreen.sh' &
+
+##### Startup applications #####
+exec nitrogen --restore # Set wallpaper
+exec compton -f -D 5 -cCG --backend glx --vsync opengl-swc -b
+exec nm-applet
+exec copyq
+exec volumeicon
+exec CopyAgent
+exec dropboxd
