@@ -222,5 +222,4 @@ exec compton -f -D 5 -cCG --backend glx --vsync opengl-swc -b
 exec nm-applet
 exec copyq
 exec volumeicon
-exec CopyAgent
 exec dropboxd
