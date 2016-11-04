@@ -36,15 +36,22 @@ Plugin 'pangloss/vim-javascript'
 
 Plugin 'tpope/vim-surround'
 
+" Python
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'nvie/vim-flake8'
+
 call vundle#end()
 
 " --------------------------------------------------
 
 filetype plugin indent on
 
+" YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_python_binary_path = '/usr/bin/python3'
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " syntastic config
 let g:syntastic_cpp_compiler = 'clang++'
