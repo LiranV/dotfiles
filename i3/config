@@ -195,13 +195,13 @@ for_window [title=".* - Chat$" class="Steam"] floating enable
 
 ##### Volume control #####
 # alsa
-#bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
-#bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
-#bindsym XF86AudioMute exec amixer -q set PCM toggle
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
 # pulseaudio
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% # increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% # decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 ##### Application shortcuts #####
 
@@ -217,9 +217,8 @@ exec xautolock -time 15 -locker '~/bin/lockscreen.sh' &
 
 ##### Startup applications #####
 exec nitrogen --restore # Set wallpaper
-exec compton -f -D 5 -cCG --backend glx --vsync opengl-swc -b
+exec compton -f -D 5 --backend glx --vsync opengl-swc -b
 exec nm-applet
 exec copyq
 exec volumeicon
-exec CopyAgent
 exec dropboxd
