@@ -216,6 +216,7 @@ bindsym Mod1+Control+l exec "~/bin/lockscreen.sh"
 exec xautolock -time 15 -locker '~/bin/lockscreen.sh' &
 
 ##### Startup applications #####
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec nitrogen --restore # Set wallpaper
 exec compton -f -D 5 --backend glx --vsync opengl-swc -b
 exec nm-applet
