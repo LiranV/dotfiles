@@ -9,38 +9,38 @@ syntax enable						" Syntax highlighting
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'gmarik/Vundle.vim'
+Plug 'gmarik/Vundle.vim'
 
 " File explorer within Vim
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
-"Plugin 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 
 " Git support
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Colorschemes
-Plugin 'jnurmine/Zenburn'
-Plugin 'sickill/vim-monokai'
+Plug 'jnurmine/Zenburn'
+Plug 'sickill/vim-monokai'
 
 " vim-javascript
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Python
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'nvie/vim-flake8'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
 
-call vundle#end()
+call plug#end()
 
 " --------------------------------------------------
 
