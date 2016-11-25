@@ -40,7 +40,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/bin/vendor_perl:/usr/bin/core_perl
-alsi -a
+neofetch --color_blocks off
 
 # Pacman alias
 alias pacupg='sudo pacman -Syu'        # Synchronize with repositories before upgrading packages that are out of date on the local system.
