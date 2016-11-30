@@ -18,6 +18,9 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 "Plug 'ervandew/supertab'
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 Plug 'kien/ctrlp.vim'
 
 Plug 'scrooloose/syntastic'
@@ -33,6 +36,7 @@ Plug 'sickill/vim-monokai'
 
 " vim-javascript
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 Plug 'tpope/vim-surround'
 
@@ -53,6 +57,13 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_python_binary_path = '/usr/bin/python3'
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" vim-jsx
+let g:jsx_ext_required = 0
+
 " syntastic config
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
@@ -61,8 +72,8 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:load_doxygen_syntax=1
 
 " Stay in visual mode while shifting indent
-vnoremap < <gv 
-vnoremap > >gv 
+vnoremap < <gv
+vnoremap > >gv
 "vnoremap <Space> I<Space><Esc>gv
 
 
