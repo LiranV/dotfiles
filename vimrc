@@ -4,45 +4,30 @@ colorscheme zenburn
 syntax enable						" Syntax highlighting
 
 " --------------------------------------------------
-" ----------------- Vundle config ------------------
+" -------------------- Plugins ---------------------
 " --------------------------------------------------
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 
-Plug 'gmarik/Vundle.vim'
-
-" File explorer within Vim
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
-"Plug 'ervandew/supertab'
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'kien/ctrlp.vim'
-
-Plug 'scrooloose/syntastic'
-
-Plug 'Valloric/YouCompleteMe'
-
-" Git support
-Plug 'tpope/vim-fugitive'
-
-" Colorschemes
+" Appearence
 Plug 'jnurmine/Zenburn'
 Plug 'sickill/vim-monokai'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
-" vim-javascript
+" Development
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive' " Git support
+Plug 'mattn/emmet-vim' " Quick HTML/CSS coding
+Plug 'tpope/vim-surround'
+Plug 'nvie/vim-flake8'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'kien/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-
-Plug 'tpope/vim-surround'
-
-" Python
-Plug 'vim-scripts/indentpython.vim'
-Plug 'nvie/vim-flake8'
 
 call plug#end()
 
@@ -67,6 +52,9 @@ let g:jsx_ext_required = 0
 " syntastic config
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " enable doxygen syntax highlighting
 let g:load_doxygen_syntax=1
@@ -137,7 +125,7 @@ noremap <C-E> 5<C-E>
 
 " RTL support
 noremap <F9> :set invrl<CR>
-noremap <F8> :set invrevins<CR>
+noremap <F10> :set invrevins<CR>
 
 
 " This lets escape clear the search highlights
