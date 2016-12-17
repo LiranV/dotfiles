@@ -209,7 +209,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 bindsym XF86Calculator exec gnome-calculator
 bindsym Print exec xfce4-screenshooter
 bindsym Mod1+Control+m exec clementine & i3 workspace $WS5 # open music player and move to workspace
-bindsym Mod1+Control+f exec nemo --no-desktop
+bindsym Mod1+Control+f exec nautilus --no-desktop
 
 # lockscreen
 bindsym Mod1+Control+l exec "~/bin/lockscreen.sh"
