@@ -149,6 +149,7 @@ set smartindent
 
 
 
+set backupcopy=yes
 set shiftround
 set autoread						" Refresh buffer if file has been changed externally
 set backspace=indent,eol,start
