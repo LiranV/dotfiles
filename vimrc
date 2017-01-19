@@ -4,58 +4,64 @@ colorscheme zenburn
 syntax enable						" Syntax highlighting
 
 " --------------------------------------------------
-" ----------------- Vundle config ------------------
+" -------------------- Plugins ---------------------
 " --------------------------------------------------
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'gmarik/Vundle.vim'
+" Appearence
+Plug 'jnurmine/Zenburn'
+Plug 'sickill/vim-monokai'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
-" File explorer within Vim
-Plugin 'scrooloose/nerdtree'
+" Development
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive' " Git support
+Plug 'mattn/emmet-vim' " Quick HTML/CSS coding
+Plug 'tpope/vim-surround'
+Plug 'nvie/vim-flake8'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'kien/ctrlp.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
-"Plugin 'ervandew/supertab'
-
-Plugin 'kien/ctrlp.vim'
-
-Plugin 'scrooloose/syntastic'
-
-Plugin 'Valloric/YouCompleteMe'
-
-" Git support
-Plugin 'tpope/vim-fugitive'
-
-" Colorschemes
-Plugin 'jnurmine/Zenburn'
-Plugin 'sickill/vim-monokai'
-
-" vim-javascript
-Plugin 'pangloss/vim-javascript'
-
-Plugin 'tpope/vim-surround'
-
-call vundle#end()
+call plug#end()
 
 " --------------------------------------------------
 
 filetype plugin indent on
 
+" YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_python_binary_path = '/usr/bin/python3'
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" vim-jsx
+let g:jsx_ext_required = 0
 
 " syntastic config
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
 " enable doxygen syntax highlighting
 let g:load_doxygen_syntax=1
 
 " Stay in visual mode while shifting indent
-vnoremap < <gv 
-vnoremap > >gv 
+vnoremap < <gv
+vnoremap > >gv
 "vnoremap <Space> I<Space><Esc>gv
 
 
@@ -119,7 +125,7 @@ noremap <C-E> 5<C-E>
 
 " RTL support
 noremap <F9> :set invrl<CR>
-noremap <F8> :set invrevins<CR>
+noremap <F10> :set invrevins<CR>
 
 
 " This lets escape clear the search highlights
@@ -143,6 +149,7 @@ set smartindent
 
 
 
+set backupcopy=yes
 set shiftround
 set autoread						" Refresh buffer if file has been changed externally
 set backspace=indent,eol,start
