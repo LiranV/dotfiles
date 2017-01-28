@@ -173,7 +173,7 @@ bindsym Mod4+Control+q mode "Exit >> (L)ogout, (X)eboot, (P)oweroff  (C)Reload (
 assign [class="Steam"] $WS3
 assign [class="Clementine"] $WS5
 assign [class="Skype"] $WS7
-assign [class="Xchat"] $WS8
+assign [class="Hexchat"] $WS8
 # Games
 assign [class="dota_linux"] $WS9
 assign [class="dota2"] $WS9
