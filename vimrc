@@ -28,6 +28,8 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'kien/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
@@ -130,6 +132,9 @@ noremap <F10> :set invrevins<CR>
 
 " This lets escape clear the search highlights
 map <F4> :noh<CR>:<backspace>
+
+" Format JSON
+com! FormatJSON %!python -m json.tool
 
 " Store all swap files here
 set backupdir=~/.vim/tmp
