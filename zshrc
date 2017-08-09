@@ -34,7 +34,7 @@ DEFAULT_USER="liran" # Hide the username
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(archlinux git history sudo virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -42,27 +42,12 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/bin/vendor_perl:/usr/bin/core_perl
 neofetch --color_blocks off
 
-# Pacman alias
-alias pacupg='sudo pacman -Syu'        # Synchronize with repositories before upgrading packages that are out of date on the local system.
-alias pacin='sudo pacman -S'           # Install specific package(s) from the repositories
-alias pacins='sudo pacman -U'          # Install specific package not from the repositories but from a file 
-alias pacre='sudo pacman -R'           # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrem='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrep='pacman -Si'              # Display information about a given package in the repositories
-alias pacreps='pacman -Ss'             # Search for package(s) in the repositories
-alias pacloc='pacman -Qi'              # Display information about a given package in the local database
-alias paclocs='pacman -Qs'             # Search for package(s) in the local database
-
-# Additional pacman alias examples
-alias pacupd='sudo pacman -Sy && sudo abs'     # Update and refresh the local package and ABS databases against repositories
-alias pacinsd='sudo pacman -S --asdeps'        # Install given package(s) as dependencies of another package
-alias pacmir='sudo pacman -Syy'                # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
-
 alias sshhuji='ssh lirux%river@gw.cs.huji.ac.il'
 alias sshhujix11='ssh -X -C -Y lirux%river@gw.cs.huji.ac.il'
 alias junit='java -cp /usr/share/java/junit4.jar:./ org.junit.runner.JUnitCore'
 alias addon-sdk="cd /opt/addon-sdk && source bin/activate; cd -"
 alias vi='vim' # Shadow vi
+alias venvme="source ./venv/bin/activate"
 export EDITOR="vim"
 export TERM=xterm-termite
 export SDL_GAMECONTROLLERCONFIG="030000005e040000dd02000003020000,Microsoft X-Box One pad (Firmware 2015),platform:Linux,x:b2,a:b0,b:b1,y:b3,back:b6,guide:b8,start:b7,dpleft:h0.8,dpdown:h0.0,dpdown:h0.4,dpright:h0.0,dpright:h0.2,dpup:h0.0,dpup:h0.1,leftshoulder:h0.0,leftshoulder:b4,lefttrigger:a2,rightshoulder:b5,righttrigger:a5,leftstick:b9,rightstick:b10,leftx:a0,lefty:a1,rightx:a3,righty:a4,"
