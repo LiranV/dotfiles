@@ -194,20 +194,19 @@ for_window [title="^Steam - Update News.*" class="Steam"] floating enable
 for_window [title=".* - Chat$" class="Steam"] floating enable
 
 ##### Volume control #####
-# alsa
+## alsa
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
-# pulseaudio
+## pulseaudio
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% # increase sound volume
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% # decrease sound volume
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 ##### Application shortcuts #####
 
-# calculator shortcut
 bindsym XF86Calculator exec gnome-calculator
-bindsym Print exec xfce4-screenshooter
+bindsym Print exec gnome-screenshot -i
 bindsym Mod1+Control+m exec clementine & i3 workspace $WS5 # open music player and move to workspace
 bindsym Mod1+Control+f exec nemo
 
@@ -222,4 +221,5 @@ exec compton -f -D 5 --backend glx --vsync opengl-swc -b
 exec nm-applet
 exec copyq
 exec volumeicon
-exec dropboxd
+exec dropbox
+exec dunst
