@@ -21,6 +21,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive' " Git support
+Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim' " Quick HTML/CSS coding
 Plug 'tpope/vim-surround'
 Plug 'nvie/vim-flake8'
