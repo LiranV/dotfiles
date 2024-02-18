@@ -8,14 +8,15 @@ font pango:Source Code Pro 9
 focus_follows_mouse no
 
 # Window borders
-new_window pixel 1
-new_float pixel 1
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -152,19 +153,20 @@ bindsym $mod+r mode "resize"
 # }
 
 # Create Log out, Reboot, Poweroff bindings
-mode "Exit >> (L)ogout, (X)eboot, (P)oweroff  (C)Reload (R)Restart" {
+mode "Exit >> (L)ogout, (X)eboot, (P)oweroff, (C)Reload, (R)Restart, (S)uspend" {
         bindsym Mod1+x exec systemctl reboot
         bindsym Mod1+l exit
         bindsym Mod1+p exec systemctl poweroff
         bindsym Mod1+c reload
         bindsym Mod1+r restart
+		bindsym mod1+s exec systemctl suspend
  
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
  
-bindsym Mod4+Control+q mode "Exit >> (L)ogout, (X)eboot, (P)oweroff  (C)Reload (R)Restart"
+bindsym Mod4+Control+q mode "Exit >> (L)ogout, (X)eboot, (P)oweroff, (C)Reload, (R)Restart, (S)uspend"
 
 # Set keyboard layout switching
 #exec setxkbmap -layout "us, il" -option "grp:lalt_lshift_toggle"
@@ -172,6 +174,7 @@ bindsym Mod4+Control+q mode "Exit >> (L)ogout, (X)eboot, (P)oweroff  (C)Reload (
 ##### Assign programs to specific workspaces #####
 assign [class="Steam"] $WS3
 assign [class="Clementine"] $WS5
+assign [class="Strawberry"] $WS5
 assign [class="Skype"] $WS7
 assign [class="Hexchat"] $WS8
 # Games
@@ -191,8 +194,9 @@ for_window [window_role="Msgcompose"] floating enable
 for_window [title="Friends" class="Steam"] floating enable
 for_window [title="^Steam - Update News.*" class="Steam"] floating enable
 for_window [title=".* - Chat$" class="Steam"] floating enable
-for_window [class="Gnome-calculator"] floating enable
+for_window [class="gnome-calculator"] floating enable
 for_window [class="Qemu-system-x86_64"] floating enable
+for_window [class="zoom"] floating enable
 
 ##### Volume control #####
 ## alsa
@@ -208,7 +212,7 @@ bindsym XF86AudioMute exec --no-startup-id pamixer -t # mute sound
 
 bindsym XF86Calculator exec gnome-calculator
 bindsym Print exec gnome-screenshot -i
-bindsym Mod1+Control+m exec clementine & i3 workspace $WS5 # open music player and move to workspace
+bindsym Mod1+Control+m exec strawberry & i3 workspace $WS5 # open music player and move to workspace
 bindsym Mod1+Control+f exec nemo
 
 # lockscreen
@@ -219,9 +223,11 @@ exec xautolock -time 15 -locker '~/bin/lockscreen.sh' &
 exec_always --no-startup-id "~/.config/polybar/launch.sh"
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec nitrogen --force-setter=xinerama --restore # Set wallpaper
-exec picom -f -D 5 --backend glx -b
-exec nm-applet
+#exec picom -f -D 5 --backend glx -b
+exec picom --unredir-if-possible -f -D 5 -i 1 -m 1 -b
+exec --no-startup-id nm-applet
 exec copyq
 exec volumeicon
 exec dropbox
 exec dunst
+# exec easyeffects --gapplication-service
